@@ -15,6 +15,6 @@ class TutorialItem(scrapy.Item):
 
 
 class DmozItem(scrapy.Item):
-    apk_name= scrapy.Field()
+    apk_name = scrapy.Field()
     app_class = scrapy.Field()
     app_name = scrapy.Field()

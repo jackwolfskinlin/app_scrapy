@@ -9,10 +9,10 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'app_scrapy'
+BOT_NAME = 'app'
 
-SPIDER_MODULES = ['app_scrapy.spiders']
-NEWSPIDER_MODULE = 'app_scrapy.spiders'
+SPIDER_MODULES = ['app.spiders']
+NEWSPIDER_MODULE = 'app.spiders'
 
 FEED_EXPORT_ENCODING = 'utf-8'
 DOWNLOAD_DELAY = 0.5
