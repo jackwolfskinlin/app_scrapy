@@ -22,6 +22,10 @@ DOWNLOAD_DELAY = 0.5
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
+#redis
+REDIS_HOST = '127.0.0.1'
+REDIS_PORT = 6379
+
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
@@ -67,6 +71,7 @@ ROBOTSTXT_OBEY = True
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'app.pipelines.AppPipeline': 1,
+   'app.pipelines.AppRedisPipeline': 2,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
