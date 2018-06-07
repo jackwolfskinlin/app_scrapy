@@ -6,7 +6,7 @@
 # https://doc.scrapy.org/en/latest/topics/items.html
 
 import scrapy
-
+from scrapy.loader.processors import TakeFirst
 
 class TutorialItem(scrapy.Item):
     # define the fields for your item here like:
@@ -14,7 +14,7 @@ class TutorialItem(scrapy.Item):
     pass
 
 
-class DmozItem(scrapy.Item):
-    apk_name = scrapy.Field()
-    app_class = scrapy.Field()
-    app_name = scrapy.Field()
+class AppItem(scrapy.Item):
+    apk_name = scrapy.Field(output_processor=TakeFirst())
+    app_class = scrapy.Field(output_processor=TakeFirst())
+    app_name = scrapy.Field(output_processor=TakeFirst())
