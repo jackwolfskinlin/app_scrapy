@@ -22,9 +22,12 @@ DOWNLOAD_DELAY = 0.5
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
-#redis
+# redis
 REDIS_HOST = '127.0.0.1'
 REDIS_PORT = 6379
+
+# mysql url
+MYSQL_URL = 'mysql://root:138128@localhost:3306/scrapy?charset=utf-8'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -70,8 +73,10 @@ REDIS_PORT = 6379
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
+#   'app.pipelines.DuplicatesPipeline': 0,
    'app.pipelines.AppPipeline': 1,
    'app.pipelines.AppRedisPipeline': 2,
+   'app.pipelines.AppMySQLPipeline': 3,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
