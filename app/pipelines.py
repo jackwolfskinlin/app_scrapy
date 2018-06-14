@@ -27,7 +27,7 @@ class AppPipeline(object):
 
 class MongoPipeline(object):
 
-    collection_name = 'scrapy_items'
+    collection_name = 'app_items'
 
     def __init__(self, mongo_uri, mongo_db):
         self.mongo_uri = mongo_uri
@@ -164,10 +164,7 @@ class AppMySQLPipeline(object):
             replace into scrapy.apps(app_name, app_class, apk_name)
             values('{app_name}', '{app_class}', '{apk_name}')
         """
-        self.cur.execute(sql.format(app_name=item['app_name'],
-                                    app_class=item['app_class'],
-                                    apk_name=item['apk_name']
-                                    ))
+        self.cur.execute(sql.format(**dict(item)))
         return item
 
 

@@ -29,6 +29,9 @@ REDIS_PORT = 6379
 # mysql url
 MYSQL_URL = 'mysql://root:138128@localhost:3306/scrapy?charset=utf-8'
 
+# mongo url
+MONGO_URL= 'mongodb://localhost:27017'
+MONGO_DATABASE = 'apps'
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
@@ -77,6 +80,7 @@ ITEM_PIPELINES = {
    'app.pipelines.AppPipeline': 1,
    'app.pipelines.AppRedisPipeline': 2,
    'app.pipelines.AppMySQLPipeline': 3,
+   'app.pipelines.MongoPipeline': 4,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
