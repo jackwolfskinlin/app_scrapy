@@ -23,4 +23,5 @@ class AppItem(scrapy.Item):
 
 if __name__ == '__main__':
     a = AppItem(apk_name='apk_jkl', app_name='app_kyxy', app_class='class_001')
-    print(a.apk_name)
+    print(hasattr(a, '__dict__'))
+
